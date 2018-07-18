@@ -1,0 +1,58 @@
+#
+# This is Git's per-user configuration file for Cygwin
+#
+# Requirements:
+#  - Cygwin under C:\Cygwin\
+#  - VIM
+#
+
+[user]
+    name = Claire Delle Luche
+    email = cl.delleluche@gmail.com
+
+[push]
+    default = simple
+
+[core]
+    pager = C:/Cygwin/bin/less -r
+    editor = vim
+    # Always use LF as line terminator
+    autocrlf = false
+    safecrlf = true
+    eol = lf
+
+[alias]
+    # Logging
+    ll = log --oneline -15
+    lg = log --oneline -15 --graph
+    # Diff
+    dc = diff --cached
+    dd = diff
+    co = diff --name-only --diff-filter=U
+    # Checkout
+    ch = checkout
+    cb = checkout -b
+    # Miscellaneous
+    st = status
+    aa = add -A :/
+    br = branch -a
+    repull = pull --rebase
+
+[color]
+    ui = auto
+
+# Diff tool
+[difftool "vimdiff"]
+    path = C:/Cygwin/bin/vimdiff
+[difftool]
+    prompt = false
+[diff]
+    tool = vimdiff
+
+# Merge tool
+[mergetool "vimdiff"]
+    path = C:/Cygwin/bin/vimdiff
+[mergetool]
+    keepBackup = false
+[merge]
+    tool = vimdiff
