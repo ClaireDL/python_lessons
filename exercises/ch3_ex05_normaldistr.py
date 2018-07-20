@@ -4,18 +4,16 @@ import math
 import sys
 import random
 
-def gaussian_function(x, mean,sd):
+def gaussian_num_generator():
     """
-    Gaussian function for a given abcisse, mean and standard deviation
+    Returns 1 random number that follows a Gaussian distribution
+    Uses the Box-Muller transform with 2 uniformly distributed [0;1[ numbers
+    ref: Thomas, Luk, Leong & Villasenor (2007)
     """
-    x = random.random(-sys.maxint, sys.maxint)
-    factor = 1/math.sqrt(2 * math.pi * sd**2)
-    exponent = -(x - mean)**2/(2 * sd**2)
-    exponentialfunction = math.pow(math.e,exponent)
-    return factor * exponentialfunction
+    a = random.random()
+    b = random.random()
+    trans_a = math.sqrt(-2 * math.log(a))
+    trans_b = 2 * math.pi * b
+    return trans_a * math.sin(trans_b)
 
-average = float(sys.argv[2])
-standarddeviation = float(sys.argv[3])
-
-print(x_abcisse)
-print(gaussian_function(x_abcisse, average, standarddeviation))
+print(gaussian_num_generator())
