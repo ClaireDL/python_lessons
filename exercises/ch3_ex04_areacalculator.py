@@ -14,8 +14,7 @@ def area_circle():
     if radius <= 0:
         print("ERROR: radius is a positive value")
         sys.exit(1)
-    else:
-        return radius * math.pi
+    return radius * math.pi
 
 def area_square():
     """
@@ -28,8 +27,7 @@ def area_square():
     if side <= 0:
         print("ERROR: side is a positive value")
         sys.exit(1)
-    else:
-        return side**2
+    return side**2
 
 def area_rectangle():
     """
@@ -43,8 +41,7 @@ def area_rectangle():
     if base <= 0 or height <= 0:
         print("ERROR: base and height are positive values")
         sys.exit(1)
-    else:
-        return base * height
+    return base * height
 
 def area_triangle():
     """
@@ -58,8 +55,7 @@ def area_triangle():
     if base <= 0 or height <= 0:
         print("ERROR: base and height are positive values")
         sys.exit(1)
-    else:
-        return base * height / 2
+    return base * height / 2
 
 def area_rhombus():
     """
@@ -73,8 +69,7 @@ def area_rhombus():
     if base <= 0 or height <= 0:
         print("ERROR: base and height are positive values")
         sys.exit(1)
-    else:
-        return base * height
+    return base * height
 
 # For missing command line arguments, prints an error message and exits
 if len(sys.argv) <= 1:
@@ -96,4 +91,4 @@ else:
     print("ERROR: enter a valid shape name")
     sys.exit(1)
 
-print("The area of the %s is %f.", name_shape, area)
+print("The area of the %s is %f." % (name_shape, area))
