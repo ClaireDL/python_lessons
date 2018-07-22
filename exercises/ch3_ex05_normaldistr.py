@@ -16,4 +16,14 @@ def gaussian_num_generator():
     trans_b = 2 * math.pi * b
     return trans_a * math.sin(trans_b)
 
+def inverse_gaussian_distr():
+    """
+    Returns
+    """
+    x = random.random()
+
+
+mean = sys.argv[1]
+
+
 print(gaussian_num_generator())
