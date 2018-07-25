@@ -13,14 +13,19 @@ def formula_dispatcher():
 
     if name_shape == "circle":
         return area_circle()
+
     elif name_shape in ["rectangle", "rhombus"]:
         return area_quadrilateral()
+
     elif name_shape == "triangle":
         return area_triangle()
+
     elif name_shape == "square":
         return area_square()
+
     else:
         return False
+
 
 def area_circle():
     """
@@ -39,6 +44,7 @@ def area_circle():
 
     return radius * math.pi
 
+
 def area_square():
     """
     Calculates the area for a square based on side
@@ -55,6 +61,7 @@ def area_square():
         return False
 
     return side ** 2
+
 
 def area_rectangle():
     """
@@ -74,6 +81,7 @@ def area_rectangle():
 
     return base * height
 
+
 def area_triangle():
     """
     Calculates the area for triangle based on base and height
@@ -92,6 +100,7 @@ def area_triangle():
 
     return base * height / 2
 
+
 def area_rhombus():
     """
     Calculates the area for rhombus, product of base and side
@@ -109,6 +118,7 @@ def area_rhombus():
         return False
 
     return base * height
+
 
 # Checks validity of input and prints error message
 if len(sys.argv) <= 1:
