@@ -150,5 +150,5 @@ else:
     shape = str(sys.argv[1]).lower()
     print("The area of the %s is %f." % (shape, formula_dispatcher()))
 
-# Generic thank you message
+# Something else that the program must do after whatever happened before
 print("Thank you for using this program.")
