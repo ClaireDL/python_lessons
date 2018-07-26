@@ -13,16 +13,12 @@ def formula_dispatcher():
 
     if name_shape == "circle":
         return area_circle()
-
     elif name_shape in ["rectangle", "rhombus"]:
         return area_quadrilateral()
-
     elif name_shape == "triangle":
         return area_triangle()
-
     elif name_shape == "square":
         return area_square()
-
     else:
         return False
 
@@ -33,15 +29,14 @@ def area_circle():
     """
 
     if len(sys.argv) < 3:
-        return "error_argument"
+        return "Error: missing argument, provide the radius"
 
     radius = float(sys.argv[2])
 
     if radius <= 0:
-        return "error_positive"
+        return "Error: radius is positive"
 
     return radius * math.pi
-
 
 def area_square():
     """
@@ -49,15 +44,14 @@ def area_square():
     """
 
     if len(sys.argv) < 3:
-        return "error_argument"
+        return "Error: missing argument, provide the side"
 
     side = float(sys.argv[2])
 
     if side <= 0:
-        return "error_positive"
+        return "Error: side is positive"
 
     return side ** 2
-
 
 def area_rectangle():
     """
@@ -65,16 +59,15 @@ def area_rectangle():
     """
 
     if len(sys.argv) < 4:
-        return "error_argument"
+        return "Error: missing argument, provide the two sides"
 
     base = float(sys.argv[2])
     height = float(sys.argv[3])
 
     if base <= 0 or height <= 0:
-         return "error_positive"
+         return "Error: the sides are positive"
 
     return base * height
-
 
 def area_triangle():
     """
@@ -82,16 +75,15 @@ def area_triangle():
     """
 
     if len(sys.argv) < 4:
-        return "error_argument"
+        return "Error: missing argument, provide the base and height"
 
     base = float(sys.argv[2])
     height = float(sys.argv[3])
 
     if base <= 0 or height <= 0:
-        return "error_positive"
+        return "Error: base and height are positive"
 
     return base * height / 2
-
 
 def area_rhombus():
     """
@@ -99,38 +91,15 @@ def area_rhombus():
     """
 
     if len(sys.argv) < 4:
-        return "error_argument"
+        return "Error: missing argument, provide the diagonals"
 
     base = float(sys.argv[2])
     height = float(sys.argv[3])
 
     if base <= 0 or height <= 0:
-        return "error_positive"
+        return "Error: the diagonals are positive"
 
     return base * height
-
-def error_argument():
-    """
-    Gets name shape to provide the relevant measure names
-    """
-    name = str(sys.argv[1]).lower()
-    if name == "circle":
-        return "radius"
-
-    elif name == "rectangle":
-        return "length and width"
-
-    elif name == "rhombus":
-        return "diagonals"
-
-    elif name == "triangle":
-        return "base and height"
-
-    elif name == "square":
-        return "side"
-
-    else:
-        return False
 
 # Checks validity of input and prints error message
 if len(sys.argv) <= 1:
@@ -139,16 +108,13 @@ if len(sys.argv) <= 1:
 elif formula_dispatcher() == False:
     print("ERROR: enter a valid shape name")
 
-elif formula_dispatcher() == "error_positive":
-    print("ERROR: %s is/are positive value(s)" % (error_argument()))
-
-elif formula_dispatcher() == "error_argument":
-    print("ERROR: missing arguments, provide %s" % (error_argument()))
+elif type(formula_dispatcher()) is str:
+    print(formula_dispatcher())
 
 # Prints the result of the relevant area calculator if input is valid
 else:
     shape = str(sys.argv[1]).lower()
     print("The area of the %s is %f." % (shape, formula_dispatcher()))
 
-# Something else that the program must do after whatever happened before
+# Thank you message for the user
 print("Thank you for using this program.")
