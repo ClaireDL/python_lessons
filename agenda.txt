@@ -87,6 +87,7 @@ Lists
   List of lists
   Exercises
     Given a list of strings, calculate the average word length
+    Create a stack and a queue using lists
     List files recursively
     Splitting a string into its fields
     Reverse a list

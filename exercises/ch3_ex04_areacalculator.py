@@ -38,6 +38,7 @@ def area_circle():
 
     return radius * math.pi
 
+
 def area_square():
     """
     Calculates the area for a square based on side
@@ -52,6 +53,7 @@ def area_square():
         return "Error: side is positive"
 
     return side ** 2
+
 
 def area_rectangle():
     """
@@ -69,6 +71,7 @@ def area_rectangle():
 
     return base * height
 
+
 def area_triangle():
     """
     Calculates the area for triangle based on base and height
@@ -84,6 +87,7 @@ def area_triangle():
         return "Error: base and height are positive"
 
     return base * height / 2
+
 
 def area_rhombus():
     """
@@ -101,13 +105,17 @@ def area_rhombus():
 
     return base * height
 
-# Checks validity of input and prints error message
+
+# Checks if name of shape is provided
 if len(sys.argv) <= 1:
     print("ERROR: command line arguments missing")
 
+# Checks if name of shape is valid
 elif formula_dispatcher() == False:
     print("ERROR: enter a valid shape name")
 
+# Checks if the return from formula_dispatcher is a string
+# if true, then print the corresponding error message
 elif type(formula_dispatcher()) is str:
     print(formula_dispatcher())
 
