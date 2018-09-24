@@ -88,7 +88,8 @@ print("")
 # The "C" way, using index
 def reverse_index(xs):
     result = list(xs)
-    for i, _ in enumerate(xs):
+    for i in range(len(xs)):
+    #for i, _ in enumerate(xs):
         result[len(result) - 1 - i] = xs[i]
     return result
 
@@ -107,3 +108,31 @@ def is_odd(number):
     return number % 2 != 0
 print("Only odd numbers: %s" % filter(is_odd, list_2))
 print("Only odd numbers: %s" % filter(lambda n: n % 2 != 0, list_2))
+
+# Mapping
+result = map(lambda n: "This is number %s" % n, list_2)
+print(result)
+
+# Sorting
+result = sorted(list_2)
+print(result)
+
+# Sorting in reverse
+result = sorted(list_2, reverse=True)
+
+# I can also use a custom sorting function
+def my_custom_comparison(x1, x2):
+    # This sorts in reverse order
+    if x1 > x2:
+        return -1
+    elif x1 == x2:
+        return 0
+    elif x1 < x2:
+        return 1
+    # Can be shortened in
+    return x1 - x2
+
+result = sorted(list_2, my_custom_comparison)
+# And the custom sorting function in one line
+result = sorted(list_2, lambda x1, x2: x2 - x1)
+print(result)
