@@ -92,11 +92,54 @@ print("The reverse list is: %s" % reverse_for_loop(list_1))
 
 
 def reverse_new_list(xs):
-    new_list = []
-    for i in range(len(xs), 0):
+    new_list = list(xs)
+    for i in range(0, len(xs)):
         index = len(xs) - i - 1
         new_list[index] = xs[i]
     return new_list
 
 print(reverse_new_list(list_1))
 
+# Problem 6
+# Find out whether a list is a palindrome
+
+# solution 1
+
+
+def palindrome_list(xs):
+    reverse_list = reverse_recursive(xs)
+    if reverse_list == xs:
+        return True
+    else:
+        return False
+
+
+list_2 = [1, 2, 3, 2, 1]
+print(palindrome_list(list_2))
+
+# solution 2
+
+
+def palindrome_list_for_loop(xs):
+    reverse_list = reverse_recursive(xs)
+    for current_element in xs:
+        if reverse_list[current_element] == xs[current_element]:
+            return True
+        else:
+            return False
+
+
+print(palindrome_list_for_loop(list_2))
+
+# solution 3
+
+def palindrome_list_iterative(xs):
+    new_list = list(xs)
+    for i in range(0, len(xs)):
+        index = len(xs) - i - 1
+        if new_list[index] == xs[i]:
+            return True
+        else:
+            return False
+
+print(palindrome_list_iterative(list_2))
