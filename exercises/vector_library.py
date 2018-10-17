@@ -39,14 +39,14 @@ def subtract(v1, v2):
     return [result_x, result_y]
 
 
-def multiply_scalar(v1):
+def multiply_scalar(v1, magnitude_scalar):
     """
     Performs vector multiplication by a scalar.
     Returns the resultant vector coordinates.
     """
     get_terminal_point(v1)
-    result_x = v1[0] * scalar
-    result_y = v1[1] * scalar
+    result_x = v1[0] * magnitude_scalar
+    result_y = v1[1] * magnitude_scalar
     return [result_x, result_y]
 
 
@@ -62,15 +62,23 @@ def multiply_dotproduct(v1, v2):
     return [result_x, result_y]
 
 
-#def multiply_crossproduct(v1, v2):
+def multiply_crossproduct(v1, v2):
     """
     Performs cross product multiplication.
     Returns the resultant vector coordinates.
     """
-#    xs = []
-#    angle_cross_product = vector_angle(v1) - vector_angle(v2)
-#    magnitude_cross_product = vector_magnitude(v1) * vector_magnitude(v2) * math.degrees(math.sin(angle_cross_product))
-#    return vector_coordinates(magnitude_cross_product, t = 90)
+    angle_v1 = calculate_vector_angle(v1)
+    angle_v2 = calculate_vector_angle(v2)
+    magnitude_v1 = calculate_vector_magnitude(v1)
+    magnitude_v2 = calculate_vector_magnitude(v2)
+
+    if angle_v1 == angle_v2:
+        return 0
+    else:
+        angle_cross_product = angle_v1 - angle_v2
+        magnitude_cross_product = magnitude_v1 * magnitude_v2 * math.degrees(math.sin(angle_cross_product))
+        result = calculate_vector_coordinates(magnitude_cross_product, angle_cross_product)
+        return result
 
 
 def calculate_vector_magnitude(v1):
@@ -90,13 +98,13 @@ def calculate_vector_angle(v1):
     return angle
 
 
-def calculate_vector_coordinates(v1):
+def calculate_vector_coordinates(magnitude, angle):
     """
-    Returns the x y coordinates of a vector based on its length and angle
+    Returns the x y coordinates of a vector based on its magnitude and angle
     """
-    theta = vector_angle(v1)
-    abcissa = vector_magnitude(v1) * math.degrees(math.cos(theta))
-    ordinate = vector_angle(v1) * math.degrees(math.sin(theta))
+    theta = calculate_vector_angle(v1)
+    abcissa = calculate_vector_magnitude(v1) * math.degrees(math.cos(theta))
+    ordinate = calculate_vector_angle(v1) * math.degrees(math.sin(theta))
     return [abcissa, ordinate]
 
 
@@ -107,8 +115,8 @@ vector_2 = [2, 5]
 # Scalar for scalar multiplication
 scalar = 3
 
-# An applied vector is defined by its x y coordinates followed by the coordinates
-# of the tail
+# An applied vector is defined by its x y coordinates
+# followed by the x y coordinates of the tail
 applied_vector_1 = [4, 3, 1, 2]
 applied_vector_2 = [2, 5, -1, -1]
 
@@ -121,8 +129,11 @@ print("The result of vector addition is %s." % addition)
 subtraction = subtract(vector_1, vector_2)
 print("The result of vector subtraction is %s." % subtraction)
 
-multiplication = multiply_scalar(vector_1)
+multiplication = multiply_scalar(vector_1, scalar)
 print("The result of scalar multiplication is %s." % multiplication)
 
 dotproduct = multiply_dotproduct(vector_1, vector_2)
 print("The dot product of 2 vectors is %s." % dotproduct)
+
+crosssproduct = multiply_crossproduct(vector_1, vector_2)
+print("The dot product of 2 vectors is %s." % crossproduct)
