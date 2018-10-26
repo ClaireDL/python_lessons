@@ -114,7 +114,7 @@ def palindrome_list(xs):
         return False
 
 
-list_2 = [1, 2, 3, 2, 1]
+list_2 = [1, 4, 3, 2, 1]
 print(palindrome_list(list_2))
 
 # solution 2
@@ -131,15 +131,13 @@ def palindrome_list_for_loop(xs):
 
 print(palindrome_list_for_loop(list_2))
 
-# solution 3
+# Problem 7
+# Flatten a nested list structure
 
-def palindrome_list_iterative(xs):
-    new_list = list(xs)
-    for i in range(0, len(xs)):
-        index = len(xs) - i - 1
-        if new_list[index] == xs[i]:
-            return True
-        else:
-            return False
-
-print(palindrome_list_iterative(list_2))
+list_3 = [[1, 1], [2], [3, [5, 8]]]
+print(len(list_3))
+newlist = []
+for current_element in list_3:
+    for i in range(len(current_element)):
+        newlist.append(current_element[i])
+print(newlist)
