@@ -30,7 +30,7 @@ if not quantity:
 # if no entry is given, the default value is 52%.
 humidity = input("What humidity percentage? 52 is the default value. ")
 if not humidity:
-    humidity = 0.52
+    humidity = 52
 
 final_recipe = proportion(people, quantity, humidity)
 

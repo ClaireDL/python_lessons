@@ -2,8 +2,6 @@
 
 import math
 
-my_origin = [0, 1]
-
 def get_terminal_point(v1):
     """
     Gets the terminal point of free and applied vectors.
@@ -20,8 +18,8 @@ def add(v1, v2):
     Performs vector addition.
     Returns the resultant vector coordinates.
     """
-    get_terminal_point(v1)
-    get_terminal_point(v2)
+    v1 = get_terminal_point(v1)
+    v2 = get_terminal_point(v2)
     result_x = v1[0] + v2[0]
     result_y = v1[1] + v2[1]
     return [result_x, result_y]
@@ -32,8 +30,8 @@ def subtract(v1, v2):
     Performs vector subtraction.
     Returns the resultant vector coordinates.
     """
-    get_terminal_point(v1)
-    get_terminal_point(v2)
+    v1 = get_terminal_point(v1)
+    v2 = get_terminal_point(v2)
     result_x = v1[0] - v2[0]
     result_y = v1[1] - v2[1]
     return [result_x, result_y]
@@ -44,7 +42,7 @@ def multiply_scalar(v1, magnitude_scalar):
     Performs vector multiplication by a scalar.
     Returns the resultant vector coordinates.
     """
-    get_terminal_point(v1)
+    v1 = get_terminal_point(v1)
     result_x = v1[0] * magnitude_scalar
     result_y = v1[1] * magnitude_scalar
     return [result_x, result_y]
@@ -55,11 +53,15 @@ def multiply_dotproduct(v1, v2):
     Performs dot product multiplication.
     Returns the resultant vector coordinates.
     """
-    get_terminal_point(v1)
-    get_terminal_point(v2)
-    result_x = v1[0] * v2[0]
-    result_y = v1[1] * v2[1]
-    return [result_x, result_y]
+    v1 = get_terminal_point(v1)
+    v2 = get_terminal_point(v2)
+    angle_v1 = calculate_angle(v1)
+    angle_v2 = calculate_angle(v2)
+    if angle_v1 - angle_v2 == 90:
+        return 0
+    else:
+    result = v1[0] * v2[0] + v1[1] * v2[1]
+    return result
 
 
 def multiply_crossproduct(v1, v2):
@@ -67,30 +69,29 @@ def multiply_crossproduct(v1, v2):
     Performs cross product multiplication.
     Returns the resultant vector coordinates.
     """
-    angle_v1 = calculate_vector_angle(v1)
-    angle_v2 = calculate_vector_angle(v2)
-    magnitude_v1 = calculate_vector_magnitude(v1)
-    magnitude_v2 = calculate_vector_magnitude(v2)
+    angle_v1 = calculate_angle(v1)
+    angle_v2 = calculate_angle(v2)
+    magnitude_v1 = calculate_magnitude(v1)
+    magnitude_v2 = calculate_magnitude(v2)
 
     if angle_v1 == angle_v2:
         return 0
     else:
-        angle_cross_product = angle_v1 - angle_v2
-        magnitude_cross_product = magnitude_v1 * magnitude_v2 * math.degrees(math.sin(angle_cross_product))
-        result = calculate_vector_coordinates(magnitude_cross_product, angle_cross_product)
+        angle_crossprod = angle_v1 - angle_v2
+        magnitude_crossprod = magnitude_v1 * magnitude_v2 * math.degrees(math.sin(angle_crossprod))
+        result = calculate_coordinates(magnitude_crossprod, angle_crossprod)
         return result
 
 
-def calculate_vector_magnitude(v1):
+def calculate_magnitude(v1):
     """
     Returns the magnitude of a vector from its coordinates
     """
-    get_terminal_point(v1)
     magnitude = math.sqrt(math.pow(v1[0], 2) + math.pow(v1[1], 2))
     return magnitude
 
 
-def calculate_vector_angle(v1):
+def calculate_angle(v1):
     """
     Returns the angle of a vector form its coordinates
     """
@@ -98,13 +99,14 @@ def calculate_vector_angle(v1):
     return angle
 
 
-def calculate_vector_coordinates(magnitude, angle):
+def calculate_coordinates(magnitude, angle):
     """
     Returns the x y coordinates of a vector based on its magnitude and angle
     """
-    theta = calculate_vector_angle(v1)
-    abcissa = calculate_vector_magnitude(v1) * math.degrees(math.cos(theta))
-    ordinate = calculate_vector_angle(v1) * math.degrees(math.sin(theta))
+    v1 = get_terminal_point(v1)
+    theta = calculate_angle(v1)
+    abcissa = calculate_magnitude(v1) * math.degrees(math.cos(theta))
+    ordinate = calculate_angle(v1) * math.degrees(math.sin(theta))
     return [abcissa, ordinate]
 
 
@@ -133,7 +135,7 @@ multiplication = multiply_scalar(vector_1, scalar)
 print("The result of scalar multiplication is %s." % multiplication)
 
 dotproduct = multiply_dotproduct(vector_1, vector_2)
-print("The dot product of 2 vectors is %s." % dotproduct)
+print("The dot product of the 2 vectors is %s." % dotproduct)
 
-crosssproduct = multiply_crossproduct(vector_1, vector_2)
-print("The dot product of 2 vectors is %s." % crossproduct)
+#crosssproduct = multiply_crossproduct(vector_1, vector_2)
+#print("The dot product of 2 vectors is %s." % crossproduct)
