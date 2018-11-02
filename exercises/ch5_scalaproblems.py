@@ -134,10 +134,23 @@ print(palindrome_list_for_loop(list_2))
 # Problem 7
 # Flatten a nested list structure
 
+# only works for single nested list
 list_3 = [[1, 1], [2], [3, [5, 8]]]
-print(len(list_3))
 newlist = []
+
 for current_element in list_3:
     for i in range(len(current_element)):
         newlist.append(current_element[i])
 print(newlist)
+
+
+# generalisation
+def flatten(xs):
+    newlist = []
+    for current_element in xs:
+        if len(current_element) == 1:
+            return newlist.append(current_element)
+        return newlist.append(flatten(current_element[i]))
+
+flattened_list = flatten(list_3)
+print("Recursive flatten %s" % flattened_list)

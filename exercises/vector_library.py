@@ -48,7 +48,7 @@ def multiply_scalar(v1, magnitude_scalar):
     return [result_x, result_y]
 
 
-def multiply_dotproduct(v1, v2):
+def multiply_scalarmultiply(v1, v2):
     """
     Performs dot product multiplication.
     Returns the resultant vector coordinates.
@@ -64,7 +64,7 @@ def multiply_dotproduct(v1, v2):
     return result
 
 
-def multiply_crossproduct(v1, v2):
+def multiply_vectormultiply(v1, v2):
     """
     Performs cross product multiplication.
     Returns the resultant vector coordinates.
@@ -134,8 +134,8 @@ print("The result of vector subtraction is %s." % subtraction)
 multiplication = multiply_scalar(vector_1, scalar)
 print("The result of scalar multiplication is %s." % multiplication)
 
-dotproduct = multiply_dotproduct(vector_1, vector_2)
-print("The dot product of the 2 vectors is %s." % dotproduct)
+scalarmultiply = multiply_scalarmultiply(vector_1, vector_2)
+print("The dot product of the 2 vectors is %s." % scalarmultiply)
 
-#crosssproduct = multiply_crossproduct(vector_1, vector_2)
-#print("The dot product of 2 vectors is %s." % crossproduct)
+#crosssproduct = multiply_vectormultiply(vector_1, vector_2)
+#print("The dot product of 2 vectors is %s." % vectormultiply)

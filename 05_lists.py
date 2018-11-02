@@ -136,3 +136,6 @@ result = sorted(list_2, my_custom_comparison)
 # And the custom sorting function in one line
 result = sorted(list_2, lambda x1, x2: x2 - x1)
 print(result)
+
+odd_squared = [x * x for x in range(10) if x % 2 == 0]
+print(odd_squared)

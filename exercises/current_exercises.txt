@@ -1,0 +1,13 @@
+EXERCISES AS ON 02/11/2018
+
+1) Research python, programming and related on wikipedia. I might ask you to write an essay on a subject of your choice
+
+2) Given a list of numbers find the minimum and the maximum without using the builtin function "min" and "max"
+
+3) Why python's division works as it works with integers and how can you get a true division with decimals?
+
+4) Redo again insertion sort. Start from scratch because now you have new knowledge. How does it compare to bubble sort (open discussion of the two algorithms)?
+
+5) Keep doing the Scala problems. Solve each problem in different ways starting from the simplest solution you can
+
+6) Create a Linux environment with all you need to develop in Python
