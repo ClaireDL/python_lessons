@@ -10,12 +10,10 @@ last_element = list_1[-1]
 print("The last element of the list is %i." % last_element)
 
 # solution 2
-last_element2 = list_1[len(list_1)-1]
+last_element2 = list_1[len(list_1) - 1]
 print("The last element of the list is %i." % last_element2)
 
 # solution 3
-
-
 def last_element(xs):
     if len(xs) == 1:
         return xs
@@ -36,8 +34,6 @@ last_element2 = list_1[len(list_1)-2]
 print("The last but one element of the list is %s." % last_element2)
 
 # solution 3
-
-
 def last_element_but_one(xs):
     if len(xs) == 2:
         return xs
@@ -46,6 +42,7 @@ def last_element_but_one(xs):
 
 final_list_last_but_one = last_element_but_one(list_1)
 print("The last element but one of the list is %i." % final_list_last_but_one[0])
+
 
 # Problem 3
 # Find the Kth element of a list.
@@ -57,18 +54,18 @@ if kth_element > len(list_1):
 else:
     print("The Kth element of the list is %i." % list_1[kth_element])
 
+
 # Problem 4
 # Find the number of elements of a list
 
 # solution 1
 print("The list contains %i elements." % len(list_1))
 
+
 # Problem 5
 # Reverse a list
 
 # solution 1
-
-
 def reverse_recursive(xs):
     if xs == []:
         return []
@@ -77,9 +74,8 @@ def reverse_recursive(xs):
 
 print("The reverse list is: %s" % reverse_recursive(list_1))
 
+
 # solution 2
-
-
 def reverse_for_loop(xs):
     list_reverse = []
     for current_element in xs:
@@ -88,9 +84,8 @@ def reverse_for_loop(xs):
 
 print("The reverse list is: %s" % reverse_for_loop(list_1))
 
+
 # solution 3
-
-
 def reverse_new_list(xs):
     new_list = list(xs)
     for i in range(0, len(xs)):
@@ -100,13 +95,12 @@ def reverse_new_list(xs):
 
 print(reverse_new_list(list_1))
 
+
 # Problem 6
 # Find out whether a list is a palindrome
 
 # solution 1
-
-
-def palindrome_list(xs):
+def check_palindrome_recursive(xs):
     reverse_list = reverse_recursive(xs)
     if reverse_list == xs:
         return True
@@ -115,12 +109,10 @@ def palindrome_list(xs):
 
 
 list_2 = [1, 4, 3, 2, 1]
-print(palindrome_list(list_2))
+print(check_palindrome_recursive(list_2))
 
 # solution 2
-
-
-def palindrome_list_for_loop(xs):
+def check_palindrome_for_loop(xs):
     reverse_list = reverse_recursive(xs)
     for current_element in xs:
         if reverse_list[current_element] == xs[current_element]:
@@ -129,28 +121,46 @@ def palindrome_list_for_loop(xs):
             return False
 
 
-print(palindrome_list_for_loop(list_2))
+print(check_palindrome_for_loop(list_2))
+
 
 # Problem 7
 # Flatten a nested list structure
-
-# only works for single nested list
 list_3 = [[1, 1], [2], [3, [5, 8]]]
 newlist = []
 
 for current_element in list_3:
-    for i in range(len(current_element)):
-        newlist.append(current_element[i])
+    newlist.extend(current_element)
 print(newlist)
 
 
-# generalisation
-def flatten(xs):
-    newlist = []
-    for current_element in xs:
-        if len(current_element) == 1:
-            return newlist.append(current_element)
-        return newlist.append(flatten(current_element[i]))
+# Problem 14
+# Duplicate the elements of a list
 
-flattened_list = flatten(list_3)
-print("Recursive flatten %s" % flattened_list)
+list_4 = ["a", "b", "c", "c", "d"]
+output = []
+for current_element in list_4:
+    output.extend(current_element+current_element)
+print(output)
+
+
+# Problem 17
+# Split a list into two parts.
+# The length of the first part is given. Use a Tuple for your result
+list_5 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
+split = 3
+list_5_split_tuple = (list_5[0:split], list_5[split:])
+print(list_5_split_tuple)
+
+
+# Problem 18
+# Given two indices, I and K, the slice is the list containing the elements
+# from and including the Ith element up to but not including the Kth element
+# of the original list. Start counting the elements with 0
+
+# index for the start of the list (including the indexed element)
+i = 3
+# index for the end of the list (excluding the indexed element)
+k = 7
+list_5_sublist = list_5[i:k]
+print(list_5_sublist)

@@ -5,6 +5,5 @@
 list1 = [[2, 4, 5], [12, 4, 7], [1, 4]]
 newlist = []
 for current_element in list1:
-    for nested_element in current_element:
-        newlist.extend(nested_element)
+    newlist.extend(current_element)
 print(newlist)
