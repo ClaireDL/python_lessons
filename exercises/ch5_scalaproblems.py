@@ -126,6 +126,7 @@ print(check_palindrome_for_loop(list_2))
 
 # Problem 7
 # Flatten a nested list structure
+# solution 1
 list_3 = [[1, 1], [2], [3, [5, 8]]]
 newlist = []
 
@@ -133,15 +134,27 @@ for current_element in list_3:
     newlist.extend(current_element)
 print(newlist)
 
+# solution 2: with list comprehension
+#newlistcomp = []
+#newlistcomp = [newlistcomp.extend(current_element) for current_element in list_3]
+#print("With list comprehension: %s" % newlistcomp)
+
 
 # Problem 14
 # Duplicate the elements of a list
 
 list_4 = ["a", "b", "c", "c", "d"]
+
+# solution 1
 output = []
 for current_element in list_4:
-    output.extend(current_element+current_element)
+    output.extend(current_element + current_element)
 print(output)
+
+# solution 2: with list comprehension
+#output_comp = []
+#output_comp = [output_comp.extend(current_element + current_element) for current_element in list_4]
+#print("With list comprehension: %s" % output_comp)
 
 
 # Problem 17

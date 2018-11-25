@@ -34,7 +34,7 @@ Basic data types
     How do I check a variable contains a number?
 
 Functions
-   Zero or multiple arguments
+  Zero or multiple arguments
   Named parameters
   Default values
   Nested functions
@@ -117,32 +117,19 @@ Dictionaries
   Dictionaries as string replacements
   Pretty printing
   Using variables as keys
-  Scoreboarding
+  Scoreboarding (count the words in a text)
   Create a dictionary from two lists dict(zip(..., ...))
-  How a dictionary work
+  How a dictionary works
   Dictionary comprehension
   Exercises
     Given a list calculate average and stddev and store the result in a dict
     Count the repetitions of letters in a given text
     Dictionaries as string interpolation
     Build a dictionary-like structure using lists
+    Sort a list of dictionaries
   Research
     Is it faster to access a random element in a list or in a dictionary?
     What is JSON? How do you load and save JSON in python?
-
-Files
-  Open, read, write
-  Build file names
-  Scan a file
-  Load a file into a list
-  Exercises
-    Write a list in a file
-    Simple template engine
-    Read a list from a file and find the maximum
-    Load a CSV file and put each field into a dictionary
-    Same as above, but use a JSON file to store the field names
-  Research
-    Build your own bank account interpreter
 
 More on Python libraries
   Creating list of random numbers
@@ -158,14 +145,19 @@ More on Python libraries
     Create one file every minute with random content
     Ask the user what is the output file they need and how often to create a new
 
-Randomness
-  Numbers in a range
-  Create a distribution
-  Exercise
-    Create a program that generates random number in the range and with the distribution given
+Files
+  Open, read, write
+  Build file names
+  Scan a file
+  Load a file into a list
+  Exercises
+    Write a list in a file
+    Simple template engine
+    Read a list from a file and find the maximum
+    Load a CSV file and put each field into a dictionary
+    Same as above, but use a JSON file to store the field names
   Research
-    What are pseudo random numbers? How do overcome the issue?
-    How to calculate statistics with numpy
+    Build your own bank account interpreter
 
 File System
   List files and directories
@@ -177,5 +169,37 @@ File System
     As above, but if the file exists move it to a directory
     At startup rotate existing files a create a new one
 
+Randomness
+  Numbers in a range
+  Create a distribution
+  Exercise
+    Create a program that generates random number in the range and with the distribution given
+  Research
+    What are pseudo random numbers? How do overcome the issue?
+    How to calculate statistics with numpy
+
 Final - File templating
 Final - Data Analysis
+
+Exceptions
+  What they are
+  How they break the flow
+  Hierarchy
+  How to raise them
+  How to catch them
+  How to extract information
+  Techniques to use them
+
+Unit test
+  What it is, python libraries
+  What to test
+  Simple Example
+  Test suites
+  Stubbing
+  Mocking
+  Exercises
+    Write a test for one of the sorting algorithm
+    Apply the same test suit to a different sorting algorithm
+    Write unit testing for the Vector library
+
+Objects
