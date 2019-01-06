@@ -2,6 +2,16 @@
 
 import random
 
+def initialise_field(width_local, height_local):
+    """
+    Seed stage
+    Initialises, e.g. populates, a field with a population of randomly selected alive
+    (1) or dead (0) cells
+    """
+    return [[random.randint(0, 1) for i in range(width_local)] for y in range(height_local)]
+
+
+# FIXME: What is "z"??? That's not meaningful
 def get_cell_status(z):
     """
     List of parameters:
@@ -14,24 +24,45 @@ def get_cell_status(z):
     (reproduction)
     """
 
-def get_neighbour_positions(xs):
+def get_neighbour_positions(my_field):
     """
     Returns the position of a cell's neighbours as a list
     """
     neighbours = []
-    global width
-    global height
+    for nested in my_field:
+        for item in nested:
+            if item % len(nested -1) == 0:
+                neighbours.append(myfield[nested - 1][nested - 1]
+                neighbours.append(myfield[nested][nested - 1]
+                neighbours.append(myfield[nested + 1][nested - 1]
+            else:
+                neighbours.append(myfield[nested - 1][item - 1]
+                neighbours.append(myfield[nested][item - 1]
+                neighbours.append(myfield[nested + 1][item - 1]
+            if item % len(nested -1) == len(nested) - 1:
+                neighbours.append(myfield[nested - 1][0])
+                neighbours.append(myfield[nested][0])
+                neighbours.append(myfield[nested + 1][0])
+            else:
+                neighbours.append(myfield[nested - 1][item + 1])
+                neighbours.append(myfield[nested][item + 1])
+                neighbours.append(myfield[nested + 1][item + 1])
+
+            neighbours.append(myfield[nested - 1][item + 1])
+            neighbours.append(myfield[nested][item + 1])
+            neighbours.append(myfield[nested + 1][item + 1])
+
+            neighbours.append(myfield[nested - 1][item]
+            # same line
+            # next line
+            neighbours.append(myfield[nested + 1][item]
 
 
-# Defines the dimensions of the grid
+# Defines the dimensions of the field
 width = 7
-height = 3
-field = []
+height = 10
+field = initialise_field(width, height)
 
-# Seed stage
-# Creates nested lists for the field with random values of 0 or 1
+# displays the field line by line
 for y in range(height):
-    field.append([random.randint(0, 1) for i in range(width)])
-
-for y in field:
-    print(y)
+    print(field[y])
