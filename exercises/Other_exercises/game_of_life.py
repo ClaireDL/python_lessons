@@ -1,14 +1,36 @@
 #!/usr/bin/env python
 
 import random
+import os
 
-def initialise_field(width, height):
+def game_of_life(col, row):
+    """
+    Runs the game of life until the system is stable,
+    that is when two consecutive generations are identical
+    """
+    field = initialise_field(col, row)
+    print_field(field)
+    for counter in range(1000):
+        next_generation = compute_next_generation(field)
+        print_field(next_generation)
+        field = next_generation
+        os.system("clear")
+    return print_field(next_generation)
+
+def print_field(field):
+    """
+    Return the field as a two dimensional array
+    """
+    for line in range(len(field)):
+        print(field[line])
+
+def initialise_field(col, row):
     """
     Seed stage
     Initialises, e.g. populates, a field with a population of randomly selected alive
     (1) or dead (0) cells
     """
-    return [[random.randint(0, 1) for i in range(width)] for y in range(height)]
+    return [[random.randint(0, 1) for i in range(col)] for y in range(row)]
 
 def get_neighbours(field, row, col):
     """
@@ -42,13 +64,16 @@ def compute_next_generation(field):
     Return the field with the next generation's cells' status
     """
     next_generation = []
+
     for row in range(len(field)):
+        next_generation_by_row = []
         for col in range(len(field[row])):
             list_neighbours = get_neighbours(field, row, col)
             cell = field[row][col]
             #print(list_neighbours)
             cell_next_generation = get_cell_status(cell, list_neighbours)
-            next_generation.append(cell_next_generation)
+            next_generation_by_row.append(cell_next_generation)
+        next_generation.append(next_generation_by_row)
 
     return next_generation
 
@@ -89,16 +114,9 @@ def get_cell_status(cell, list_neighbours):
 
 # MAIN PROGRAM STARTS HERE
 # Defines the dimensions of the field
-width = 7
-height = 10
-field = initialise_field(width, height)
-
-# displays the field as an array
-#for line in range(height):
-#    print(field[line])
-#print()
-
-#print(compute_next_generation(field))
+col = 7
+row = 10
+game_of_life(row, col)
 
 # testing compute_next_generation
 test_field = [
@@ -114,4 +132,6 @@ test_cell_status = [
     [0, 1, 1, 0, 0],
     [0, 0, 1, 1, 0]
 ]
-print(compute_next_generation(test_cell_status))
+#print(test_cell_status)
+#game_of_life = compute_next_generation(test_cell_status)
+#print_field(game_of_life)
