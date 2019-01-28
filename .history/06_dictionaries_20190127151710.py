@@ -69,6 +69,5 @@ print(my_dict)
 print("Birthday: " + my_dict.get("birthday", "Birthday not defined"))
 
 # Iterate through keys and values:
-print("Content of my_dict")
 for key, value in my_dict.iteritems():
     print("Key: %s, Value: %s" % (key, value))

@@ -1,4 +1,4 @@
-01 - First libraries and functions
+First libraries and functions
   Print output
   Importing packages
   Getting the time
@@ -14,7 +14,7 @@
     What is a timestamp?
     How do you install a nekw package (numpy)?
 
-02 - Basic data types
+Basic data types
   Strings
   Int
   Double
@@ -33,7 +33,7 @@
     What is the biggest Int I can store and how do I find it?
     How do I check a variable contains a number?
 
-03 - Functions
+Functions
   Zero or multiple arguments
   Named parameters
   Default values
@@ -53,7 +53,7 @@
   Research
     What are lambda functions in python
 
-04 - Strings
+Strings
   String interpolation and concatenation
   String upper case, lower case, strip
   Replace substring
@@ -68,7 +68,7 @@
     How to find a text using regular expressions
     How to find all numbers in a given text with RE
 
-05 - Lists
+Lists
   Create a list
   Append and extend lists
   Select a specific element
@@ -110,7 +110,7 @@
   Research
     Study and implement Bubble Sort
 
-06 - Dictionaries
+Dictionaries
   Simple dictionary
   Complex example with nested structures
   Adding, removing and updating entries
@@ -131,7 +131,7 @@
     Is it faster to access a random element in a list or in a dictionary?
     What is JSON? How do you load and save JSON in python?
 
-07 - More on Python libraries
+More on Python libraries
   Creating list of random numbers
   Listing files in a directory
   How to read arguments from the command line
@@ -145,7 +145,7 @@
     Create one file every minute with random content
     Ask the user what is the output file they need and how often to create a new
 
-08 - Files
+Files
   Open, read, write
   Build file names
   Scan a file
@@ -159,7 +159,7 @@
   Research
     Build your own bank account interpreter
 
-09 - File System
+File System
   List files and directories
   Remove file and directories
   Move files and directories
@@ -169,7 +169,7 @@
     As above, but if the file exists move it to a directory
     At startup rotate existing files a create a new one
 
-10 - Randomness
+Randomness
   Numbers in a range
   Create a distribution
   Exercise
@@ -181,7 +181,7 @@
 Final - File templating
 Final - Data Analysis
 
-11 - Exceptions
+Exceptions
   What they are
   How they break the flow
   Hierarchy
@@ -190,7 +190,7 @@ Final - Data Analysis
   How to extract information
   Techniques to use them
 
-12 - Unit test
+Unit test
   What it is, python libraries
   What to test
   Simple Example
@@ -202,4 +202,4 @@ Final - Data Analysis
     Apply the same test suit to a different sorting algorithm
     Write unit testing for the Vector library
 
-13 - Objects
+Objects

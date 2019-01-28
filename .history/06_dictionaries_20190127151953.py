@@ -39,7 +39,7 @@ print(my_dict.values())
 
 # Checking if a key is present
 print("Is \"birthday\" in my_dict? ", end="")
-print("birthday" in my_dict)
+print("age" in my_dict)
 
 # Accessing a key that doesn't exists with a default value
 print("Birthday: " + my_dict.get("birthday", "Birthday not defined"))

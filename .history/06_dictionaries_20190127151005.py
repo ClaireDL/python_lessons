@@ -29,11 +29,9 @@ type(json_my_dict)
 # Accessing a key in the dictionary
 print("Name: " + my_dict["name"])
 
-# Obtaining all the keys
 print("All they keys: ", end="")
 print(my_dict.keys())
 
-# Obtaining all the values
 print("All they values: ", end="")
 print(my_dict.values())
 
@@ -45,11 +43,7 @@ print("birthday" in my_dict)
 print("Birthday: " + my_dict.get("birthday", "Birthday not defined"))
 
 # Updating a value of a dict in one line
-# if "age" not in my_dict.keys():
-#     my_dict["age"] = 0
-# else:
-#     my_dict["age"] = my_dict["age"] + 1
-my_dict["age"] = my_dict.get("age", -1) + 1
+my_dict["age"] = my_dict.get("age", 0) + 1
 
 # Setting the value of a key
 my_dict["name"] = "Fabrizio"
@@ -67,8 +61,3 @@ print(my_dict)
 
 # Trying again the value that didn't exists before
 print("Birthday: " + my_dict.get("birthday", "Birthday not defined"))
-
-# Iterate through keys and values:
-print("Content of my_dict")
-for key, value in my_dict.iteritems():
-    print("Key: %s, Value: %s" % (key, value))

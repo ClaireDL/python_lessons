@@ -29,11 +29,9 @@ type(json_my_dict)
 # Accessing a key in the dictionary
 print("Name: " + my_dict["name"])
 
-# Obtaining all the keys
 print("All they keys: ", end="")
 print(my_dict.keys())
 
-# Obtaining all the values
 print("All they values: ", end="")
 print(my_dict.values())
 
@@ -67,8 +65,3 @@ print(my_dict)
 
 # Trying again the value that didn't exists before
 print("Birthday: " + my_dict.get("birthday", "Birthday not defined"))
-
-# Iterate through keys and values:
-print("Content of my_dict")
-for key, value in my_dict.iteritems():
-    print("Key: %s, Value: %s" % (key, value))

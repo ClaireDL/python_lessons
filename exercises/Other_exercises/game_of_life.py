@@ -2,19 +2,20 @@
 
 import random
 import os
+import time
 
 def game_of_life(col, row):
     """
-    Runs the game of life until the system is stable,
-    that is when two consecutive generations are identical
+    Returns the game of life
     """
     field = initialise_field(col, row)
     print_field(field)
-    for counter in range(1000):
+    while True:
         next_generation = compute_next_generation(field)
-        print_field(next_generation)
-        field = next_generation
         os.system("clear")
+        print_field(next_generation)
+        time.sleep(0.8)
+        field = next_generation
     return print_field(next_generation)
 
 def print_field(field):
@@ -22,7 +23,7 @@ def print_field(field):
     Return the field as a two dimensional array
     """
     for line in range(len(field)):
-        print(field[line])
+        print (" ".join(map(str, field[line])))
 
 def initialise_field(col, row):
     """
@@ -114,8 +115,8 @@ def get_cell_status(cell, list_neighbours):
 
 # MAIN PROGRAM STARTS HERE
 # Defines the dimensions of the field
-col = 7
-row = 10
+col = 15
+row = 15
 game_of_life(row, col)
 
 # testing compute_next_generation
