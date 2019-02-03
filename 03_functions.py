@@ -39,7 +39,7 @@ print("arg1", "arg2", "arg3")
 def my_function_1(arg1, **dict_args):
     """
     Function with variable arguments, as dictionary
-    """///
+    """
     print("Argument #1: " + arg1)
     print(dict_args)
 

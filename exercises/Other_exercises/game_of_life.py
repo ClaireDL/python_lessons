@@ -20,8 +20,9 @@ def game_of_life(col, row):
 
 def print_field(field):
     """
-    Return the field as a two dimensional array
+    Returns the field as a two dimensional array
     """
+    field
     for line in range(len(field)):
         print (" ".join(map(str, field[line])))
 
