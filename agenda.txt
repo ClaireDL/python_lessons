@@ -203,3 +203,6 @@ Final - Data Analysis
     Write unit testing for the Vector library
 
 13 - Objects
+14 - Database
+15 - HTML
+16 - Web development
