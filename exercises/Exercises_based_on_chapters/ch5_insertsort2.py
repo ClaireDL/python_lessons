@@ -30,4 +30,4 @@ def insertsort(xs):
 
 input_list = [5, 4, 6, 1, 7, 2, 3, 9, 8]
 result = insertsort(input_list)
-print(result)
+# print(result)
