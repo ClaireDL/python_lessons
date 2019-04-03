@@ -38,21 +38,21 @@ except ValueError:
     quantity = float(quantity)
 
 try:
-    humidity = raw_input("How much humidity percentage do you require for your dough? 52 is the default value. ")
-    if not humidity:
-        humidity = 0.52
-    elif humidity not in range(0, 100):
-        print("Please enter a humidity ratio between 0 and 100")
-        humidity = raw_input("How much humidity percentage do you require for your dough? 52 is the default value. ")
-    humidity = float(humidity)/100
+    hydration = raw_input("How much hydration percentage do you require for your dough? 52 is the default value. ")
+    if not hydration:
+        hydration = 0.52
+    elif hydration not in range(0, 100):
+        print("Please enter a hydration ratio between 0 and 100")
+        hydration = raw_input("How much hydration percentage do you require for your dough? 52 is the default value. ")
+    hydration = float(hydration)/100
 except ValueError:
-    print("Please enter humidity in digits")
-    humidity = raw_input("How much humidity percentage do you require for your dough? 52 is the default value. ")
-    humidity = float(humidity)/100
+    print("Please enter hydration in digits")
+    hydration = raw_input("How much hydration percentage do you require for your dough? 52 is the default value. ")
+    hydration = float(hydration)/100
 
 flour = 8 * people / 9 * quantity
 sourdough = flour / 4
-water = humidity * flour - .5 * sourdough
+water = hydration * flour - .5 * sourdough
 
 if int(people) == 1:
     print("For {0:.0f} person, you need:".format(people))

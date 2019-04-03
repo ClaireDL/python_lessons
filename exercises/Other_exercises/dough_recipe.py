@@ -7,10 +7,10 @@ def calculate_ingredient_quantity(*list_args):
     """
     Returns the proportions needed for the dough
     """
-    humidity = float(list_args[2]) / 100
+    hydration = float(list_args[2]) / 100
     flour = 8 * float(list_args[0]) / 9 * float(list_args[1])
     sourdough = (flour / 4)
-    water = (humidity * flour - .5 * sourdough)
+    water = (hydration * flour - .5 * sourdough)
     return [flour, sourdough, water]
 
 
@@ -26,13 +26,13 @@ quantity_per_person = raw_input("How much dough per person? 150g is the default 
 if not quantity_per_person:
     quantity_per_person = 150.0
 
-# prompts the user for the humidity percentage
+# prompts the user for the hydration percentage
 # if no entry is given, the default value is 52%.
-humidity = raw_input("What humidity percentage? 52 is the default value. ")
-if not humidity:
-    humidity = 52
+hydration = raw_input("What hydration percentage? 52 is the default value. ")
+if not hydration:
+    hydration = 52
 
-recipe = calculate_ingredient_quantity(people, quantity_per_person, humidity)
+recipe = calculate_ingredient_quantity(people, quantity_per_person, hydration)
 
 # prints the recipe
 if int(people) == 1:
