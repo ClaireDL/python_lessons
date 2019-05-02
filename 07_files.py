@@ -26,3 +26,7 @@ example_file.seek(0)
 print(example_file.read())
 example_file.close()
 
+# I'm reading the file one line at the time and saving memory
+with open("my_example.txt", "r") as example_file:
+    for line in example_files.readline():
+        print(line)

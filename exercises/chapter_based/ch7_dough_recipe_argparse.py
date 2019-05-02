@@ -41,10 +41,16 @@ parser.add_argument(
     help="The amount of sourdough, in baker's percentage"
 )
 parser.add_argument(
-    '--sourdough-hydration',
+    '--sourdough-hydration', '-a',
     default=0.5,
     type=float,
     help="The hydration of the sourdough"
+)
+parser.add_argument(
+    '--portions', '-r',
+    default=1,
+    type=int,
+    help="The number of portion to divide the dough in"
 )
 args = parser.parse_args()
 
@@ -52,12 +58,20 @@ args = parser.parse_args()
 flour_total = args.flour * args.people
 sourdough = flour_total * args.sourdough
 flour = flour_total / (1 + args.sourdough * (1.0 - args.sourdough_hydration))
-fats = flour_total * args.fats
-water = flour_total * args.hydration - sourdough * args.sourdough_hydration - fats / 2.0
+water = flour_total * args.hydration - sourdough * args.sourdough_hydration
 salt = flour_total * args.salt
+# On effects of fats on hydration:
+#   http://www.thefreshloaf.com/node/30743/where-does-oilhoney-and-sugar-fit-hydration-formulas
+fats = flour_total * args.fats
 
 # Total weight
 total_weight = sourdough + water + flour + salt + fats
+
+# Portioning
+portion_weight = total_weight / float(args.portions)
+
+# Estimate the rising time of the dough compared to the sourdough
+rising_multiplier = args.sourdough_hydration / args.sourdough
 
 # Display result
 print("""
@@ -82,7 +96,9 @@ Total amounts for {0} person(s):
   Fats.............: {10:.0f}g
   Salt.............: {11:.1f}g
 
-TOTAL WEIGHT: {12:.0f}g""".format(
+TOTAL WEIGHT: {12:.0f}g
+
+Rising multiplier: {13:.2f}x""".format(
     args.people,
     args.flour,
     args.hydration * 100,
@@ -95,5 +111,15 @@ TOTAL WEIGHT: {12:.0f}g""".format(
     round(sourdough),
     round(fats),
     round(salt, 1),
-    total_weight
+    total_weight,
+    round(rising_multiplier, 2)
 ))
+
+if args.portions > 1:
+    print("""
+Portioning for {0} portions:
+
+  Cut weight.......: {1:.0f}g""".format(
+        args.portions,
+        round(portion_weight)
+    ))
