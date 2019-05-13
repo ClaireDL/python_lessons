@@ -44,9 +44,9 @@ def sortmerge(half, cutpoint, total_length):
             l += 1
     return half
 
-print("this is the unsorted list")
-input_list = [5, 4, 6, 1, 7, 2, 3, 9, 8]
-print(input_list)
-result = mergesort(input_list)
-print("this is merge sort")
-print(result)
+# print("this is the unsorted list")
+# input_list = [5, 4, 6, 1, 7, 2, 3, 9, 8]
+# print(input_list)
+# result = mergesort(input_list)
+# print("this is merge sort")
+# print(result)
