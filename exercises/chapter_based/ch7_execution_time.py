@@ -13,7 +13,7 @@ def generate_random_list(size):
     """
     return [random.randint(0, 100) for i in range(size)]
 
-samples_sizes = [x * x for x in range(30)]
+samples_sizes = [x * x for x in range(50)]
 
 timedata = []
 for sample_size in samples_sizes:

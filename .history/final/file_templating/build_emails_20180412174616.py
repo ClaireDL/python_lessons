@@ -1,14 +1,4 @@
 #!/usr/bin/env python
-#
-# Create a program to prepare emails for different users.
-#
-# You have to come up with the requirement knowing the final result.
-# The purpose of the script you want to write is to send (for this script,
-# just create the content) customized emails to a list of people.
-# You want it to work not just for one email and just one list of people,
-# you want it to be generic. You want a high quality script and not a bunch
-# of quick-n-dirty lines of code.
-#
 
 import csv
 import argparse

@@ -16,12 +16,9 @@ with open("sample.txt", "r") as example_file:
     for element in example_file:
         print("%s" % element)
         sum += int(element)
-
 with open("sum_result.txt", "w+") as result_file:
     result_file.write("%s" %sum)
 
 # read from result_file
 with open("sum_result.txt", "r") as result_file:
     print("the sum is: %s" % result_file.read())
-
-#print("sum = %i" % sum)

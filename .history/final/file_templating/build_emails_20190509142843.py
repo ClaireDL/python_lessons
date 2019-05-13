@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 #
 # Create a program to prepare emails for different users.
-#
-# You have to come up with the requirement knowing the final result.
-# The purpose of the script you want to write is to send (for this script,
-# just create the content) customized emails to a list of people.
-# You want it to work not just for one email and just one list of people,
-# you want it to be generic. You want a high quality script and not a bunch
-# of quick-n-dirty lines of code.
+# The requirement are:
+#  - The emails are stored as template in files. One file per email template.
+#    the program has to work on one template at the time
+#  - The data used to fill the template is stored as CSV file. One data file
+#    per execution of the program.
+#  - Using the data file the program has to fill the template and create one
+#    email per row.
+#  - The emails created have to be saved in a configuratble location
+#  - The program must be command line friendly, no prompts
+#  - Proper documentation of the code
 #
 
 import csv
