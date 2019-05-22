@@ -1,34 +1,43 @@
 #!/usr/bin/env python
 
+
 def mergesort(xs):
     """
-    Split the unsorted list into sublists until there are lists with 1 element only
-    Sorts elements in a list of 2 elements
+    Sorts the input list
     """
-    middle = len(xs)//2
-    left_array = xs[0:middle]
-    right_array = xs[middle:]
-    if middle == 0:
+    if len(xs) <= 1:
         return xs
-    # recursively splits lists into two halves
+
+    # splits the input list in two halves
+    middle = len(xs) // 2
+    left_array = xs[:middle]
+    right_array = xs[middle:]
+
+    # sorts each half
     left_array = mergesort(left_array)
     right_array = mergesort(right_array)
+
+    #
     xs = left_array + right_array
-    # calls the merge function
-    sortmerge(xs, middle, len(xs))
+
+    # merges the two sorted halves
+    merge(xs, middle, len(xs))
     return xs
 
-def sortmerge(half, cutpoint, total_length):
+
+#def merge(left_list, right_list):
+def merge(to_merge, cutpoint, total_length):
     """
-    Compares two adjacent elements then merge them
+    Merge function of the merge sort algorithm
+    Merges two sorted list so that the output list is itself sorted
     """
     left = []
     right = []
 
     for i in range(cutpoint):
-        left.append(half[i])
+        left.append(to_merge[i])
     for j in range(total_length - cutpoint):
-        right.append(half[cutpoint + j])
+        right.append(to_merge[cutpoint + j])
 
     left.append("null")
     right.append("null")
@@ -37,12 +46,12 @@ def sortmerge(half, cutpoint, total_length):
     l = 0
     for i in range(total_length):
         if left[k] < right[l]:
-            half[i] = left[k]
+            to_merge[i] = left[k]
             k += 1
         else:
-            half[i] = right[l]
+            to_merge[i] = right[l]
             l += 1
-    return half
+    return to_merge
 
 # print("this is the unsorted list")
 # input_list = [5, 4, 6, 1, 7, 2, 3, 9, 8]
