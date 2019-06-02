@@ -1,0 +1,160 @@
+{
+    "GB00B3X7QG63_GB00B45Q9038_GB00B4M89245": {
+        "efficient_risk_2p": {
+            "performance": {
+                "expected_return": 0.053167233250784166,
+                "sharpe_ratio": 0.4609680540390145,
+                "volatility": 0.07195126204554084
+            },
+            "remaining_funds": 152.54999999999927,
+            "weights_allocated": {
+                "GB00B3X7QG63": 22,
+                "GB00B4M89245": 27
+            }
+        },
+        "efficient_risk_4p": {
+            "performance": {
+                "expected_return": 0.0531672316582705,
+                "sharpe_ratio": 0.46096803190904256,
+                "volatility": 0.07195126204503266
+            },
+            "remaining_funds": 152.54999999999927,
+            "weights_allocated": {
+                "GB00B3X7QG63": 22,
+                "GB00B4M89245": 27
+            }
+        },
+        "max_sharpe": {
+            "performance": {
+                "expected_return": 0.057970943655960644,
+                "sharpe_ratio": 0.4928406680971461,
+                "volatility": 0.0770450697637558
+            },
+            "remaining_funds": 186.11000000000016,
+            "weights_allocated": {
+                "GB00B3X7QG63": 18,
+                "GB00B45Q9038": 16,
+                "GB00B4M89245": 15
+            }
+        },
+        "min_volatility": {
+            "performance": {
+                "expected_return": 0.05804645779557503,
+                "sharpe_ratio": 0.4818587722370986,
+                "volatility": 0.07895769463517055
+            },
+            "remaining_funds": 196.16999999999965,
+            "weights_allocated": {
+                "GB00B3X7QG63": 16,
+                "GB00B45Q9038": 16,
+                "GB00B4M89245": 17
+            }
+        }
+    },
+    "GB00B3X7QG63_GB00B45Q9038_IE00B1S74Q32": {
+        "efficient_risk_2p": {
+            "performance": {
+                "expected_return": 0.04435006120506568,
+                "sharpe_ratio": 0.44783549082238705,
+                "volatility": 0.054372781309382626
+            },
+            "remaining_funds": 169.01999999999975,
+            "weights_allocated": {
+                "GB00B3X7QG63": 10,
+                "GB00B45Q9038": 2,
+                "IE00B1S74Q32": 76
+            }
+        },
+        "efficient_risk_4p": {
+            "performance": {
+                "expected_return": 0.04434960433498445,
+                "sharpe_ratio": 0.4478270888708193,
+                "volatility": 0.05437278123657313
+            },
+            "remaining_funds": 169.01999999999975,
+            "weights_allocated": {
+                "GB00B3X7QG63": 10,
+                "GB00B45Q9038": 2,
+                "IE00B1S74Q32": 76
+            }
+        },
+        "max_sharpe": {
+            "performance": {
+                "expected_return": 0.0539630166703958,
+                "sharpe_ratio": 0.5250744030658108,
+                "volatility": 0.0646822935418145
+            },
+            "remaining_funds": 60.93999999999983,
+            "weights_allocated": {
+                "GB00B3X7QG63": 17,
+                "GB00B45Q9038": 16,
+                "IE00B1S74Q32": 34
+            }
+        },
+        "min_volatility": {
+            "performance": {
+                "expected_return": 0.05404953820738105,
+                "sharpe_ratio": 0.5249040827969723,
+                "volatility": 0.06486811462000205
+            },
+            "remaining_funds": 66.81000000000029,
+            "weights_allocated": {
+                "GB00B3X7QG63": 16,
+                "GB00B45Q9038": 17,
+                "IE00B1S74Q32": 34
+            }
+        }
+    },
+    "GB00B3X7QG63_GB00B45Q9038_IE00B1S75374": {
+        "efficient_risk_2p": {
+            "performance": {
+                "expected_return": 0.039016543443496615,
+                "sharpe_ratio": 0.3534476092153393,
+                "volatility": 0.05380300488016801
+            },
+            "remaining_funds": 168.22999999999956,
+            "weights_allocated": {
+                "GB00B3X7QG63": 13,
+                "IE00B1S75374": 43
+            }
+        },
+        "efficient_risk_4p": {
+            "performance": {
+                "expected_return": 0.039016398204621196,
+                "sharpe_ratio": 0.353444909892451,
+                "volatility": 0.05380300485981721
+            },
+            "remaining_funds": 168.22999999999956,
+            "weights_allocated": {
+                "GB00B3X7QG63": 13,
+                "IE00B1S75374": 43
+            }
+        },
+        "max_sharpe": {
+            "performance": {
+                "expected_return": 0.052992159292873854,
+                "sharpe_ratio": 0.47062512871081713,
+                "volatility": 0.07010284253892103
+            },
+            "remaining_funds": 129.04000000000013,
+            "weights_allocated": {
+                "GB00B3X7QG63": 18,
+                "GB00B45Q9038": 17,
+                "IE00B1S75374": 17
+            }
+        },
+        "min_volatility": {
+            "performance": {
+                "expected_return": 0.05161489658959189,
+                "sharpe_ratio": 0.4583334030315374,
+                "volatility": 0.06897794570607918
+            },
+            "remaining_funds": 35.36999999999978,
+            "weights_allocated": {
+                "GB00B3X7QG63": 16,
+                "GB00B45Q9038": 17,
+                "IE00B1S75374": 20
+            }
+        }
+    }
+}
