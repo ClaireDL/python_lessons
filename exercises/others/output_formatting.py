@@ -6,7 +6,7 @@ import requests
 
 
 def test(json_file, comparison, entry):
-    # selects values for the test
+    # selects values of the test that have to be exported
     output = []
     output.append(comparison)
     expected_return = json_file[comparison][entry]["performance"]["expected_return"]
@@ -19,9 +19,18 @@ def test(json_file, comparison, entry):
 
 def header():
     csv_file.write("portfolio,")
-    csv_file.write("expected_return,")
-    csv_file.write("sharpe_ratio,")
-    csv_file.write("volatility,")
+    csv_file.write("2p_expected_return,")
+    csv_file.write("2p_sharpe_ratio,")
+    csv_file.write("2p_volatility,")
+    csv_file.write("4p_expected_return,")
+    csv_file.write("4p_sharpe_ratio,")
+    csv_file.write("4p_volatility,")
+    csv_file.write("maxS_expected_return,")
+    csv_file.write("maxS_sharpe_ratio,")
+    csv_file.write("maxS_volatility,")
+    csv_file.write("minV_expected_return,")
+    csv_file.write("minV_sharpe_ratio,")
+    csv_file.write("minV_volatility,")
     csv_file.write('\n')
 
 
@@ -29,42 +38,18 @@ def header():
 # generates output for test1: efficient_risk_2p
 with open("C:/Users/chdell/Downloads/result-3funds-ema_historical_return-exp_cov-1.00.json") as json_file:
     data = json.load(json_file)
-    with open("efficient_risk_2p.csv", "w+") as csv_file:
+    with open("result.csv", "w+") as csv_file:
         # adds header
         header()
 
-        # collects values in the portfolios
+        # collects values in the portfolios and writes the output
         for portfolio in data:
             result = test(data, portfolio, "efficient_risk_2p")
             json.dump(result, csv_file, separators = (",", ":"))
-            csv_file.write('\n')
-
-    with open("efficient_risk_4p.csv", "w+") as csv_file:
-        # adds header
-        header()
-
-        # collects values in the portfolios
-        for portfolio in data:
             result = test(data, portfolio, "efficient_risk_4p")
             json.dump(result, csv_file, separators = (",", ":"))
-            csv_file.write('\n')
-
-    with open("max_sharpe.csv", "w+") as csv_file:
-        # adds header
-        header()
-
-        # collects values in the portfolios
-        for portfolio in data:
             result = test(data, portfolio, "max_sharpe")
             json.dump(result, csv_file, separators = (",", ":"))
-            csv_file.write('\n')
-
-    with open("min_volatility.csv", "w+") as csv_file:
-        # adds header
-        header()
-
-        # collects values in the portfolios
-        for portfolio in data:
             result = test(data, portfolio, "min_volatility")
             json.dump(result, csv_file, separators = (",", ":"))
             csv_file.write('\n')
