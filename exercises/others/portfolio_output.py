@@ -2,8 +2,6 @@
 
 import json
 import csv
-import requests
-
 
 def test(input_file, comparison, entry):
     # selects values of the test that have to be exported

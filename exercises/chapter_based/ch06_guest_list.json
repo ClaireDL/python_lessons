@@ -1,0 +1,42 @@
+[
+    {
+        "parent_first_name": "Fabrizio",
+        "parent_last_name": "Rossi",
+        "child_first_name": "Ric",
+        "child_gender": "male",
+        "email_address": "fabrirossi@somewhere.com",
+        "phone_number" : "+447475316849",
+        "date_of_birth": "16/04/2014",
+        "suggested_activity": "frisbee"
+    },
+    {
+        "parent_first_name": "Claire",
+        "parent_last_name": "Delish",
+        "child_first_name": "Surya",
+        "child_gender": "female",
+        "email_address": "clairedelish@somewhere.com",
+        "phone_number" : "+447475316849",
+        "date_of_birth": "20/12/2015",
+        "suggested_activity": "football"
+    },
+    {
+        "parent_first_name": "Eric",
+        "parent_last_name": "Dane",
+        "child_first_name": "Freya",
+        "child_gender": "female",
+        "email_address": "ericthefearsome@somewhere.com",
+        "phone_number" : "+447475316849",
+        "date_of_birth": "20/03/2015",
+        "suggested_activity": "frisbee"
+    },
+    {
+        "parent_first_name": "Danny",
+        "parent_last_name": "De Vito",
+        "child_first_name": "Arnie",
+        "child_gender": "male",
+        "email_address": "dannyisnotsmall@somewhere.com",
+        "phone_number" : "+447475316849",
+        "date_of_birth": "29/02/2014",
+        "suggested_activity": "golf"
+    }
+]
