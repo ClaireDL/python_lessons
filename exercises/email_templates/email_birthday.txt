@@ -1,0 +1,11 @@
+	Dear {parent_first_name} {parent_last_name},
+
+A little bird told us that {child_first_name}'s birthday is coming up on {date_of_birth}...
+We would like to invite {him/her} to a game of {suggested_activity"} along with {his/her} friends.
+Please let us know the party size you would like us to organise!
+
+We look forward to hearing from you!
+
+Best wishes,
+
+Party time

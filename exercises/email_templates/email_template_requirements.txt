@@ -1,0 +1,68 @@
+"""
+The program generates customised content to email a list of people.
+It generates one document per person in a list, replacing keywords in
+the email template with each person's own information (this is the
+customised content).
+
+I. Inputs:
+
+1- "People info": This document contains a list of entries, 1 per person,
+with personal information associated with a specific keyword (such as
+parent_first_name, email_address etc.).
+
+2- "Email template": This text file contains the email body. Keywords
+inserted in the text file (e.g. {parent_first_name}) indicate where the
+customised content should be inserted (thus replacing the keywords).
+
+II. Output:
+
+We want 1 email per person in "People info".
+This email is:
+- a text file which title is uniquely identifiable (e.g. name_firstname.txt)
+- its content starts with the recipient's email address
+- the subsequent content is the email body, that is, "Email template"
+filled with the customised content
+
+III. Requirements about input:
+
+1- Inputs are chosen by the user so that they can use different email
+templates or list of people.
+
+2- "People info" can be of different formats, a csv or a dictionary in
+json format.
+
+3- The list of possible keywords is defined in advance
+
+4- The "Email template" is a text file that respects the keyword
+insertion format (e.g. {keyword})
+
+IV. The program has to:
+
+1- Use gender information provided in "People info" to customise the email
+with the right words (determiner, pronoun)
+This needs information contained in "People info".
+
+2- Use date of birth provided in "People info" to include a reader-friendly
+date reference
+This needs information contained in "People info".
+
+3- Identify the format of "People info" and process its content accordingly.
+The format can be a csv file or a dictionary with json
+
+4- Replace {keywords} from "Email template" with the customised content
+The {keywords} are either the information directly from "People info" or
+"reader friendly" information (re. points 1 and 2).
+
+5- Write text files (add email address, then the email body, re. point 4)
+
+6- Find the input files (in the current directory where the program is)
+
+7- Save the output files (in a folder named after the "Email template" title;
+this folder will be in the current directory)
+
+PS: comments about the requirements
+- it feels wordy and redundant at times (for wanting to be precise and structured)
+- I try to not think in terms of programming... for example, is the mention of
+"current directory" too program-focused?
+- Point IV is trying to lay out the "boxes" and how they use other "boxes"
+- I tried to detail everything I need
